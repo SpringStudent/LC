@@ -50,8 +50,7 @@ using namespace std;
 
 int httpServerPort = 22200;
 
-std::wstring g_ServiceName = L"MyBilldDeskService";
-std::wstring g_AppName = L"BilldDesk";
+std::wstring g_AppName = L"WinDesktop";
 std::wstring g_regPath = L"SOFTWARE\\" + g_AppName;
 std::string g_logPath = "C:\\screenshots\\a.log";
 
