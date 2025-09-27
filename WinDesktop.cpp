@@ -698,6 +698,9 @@ void SimulateKeyEvent(int keyCode, int pressed) {
 }
 
 void SimulateMouseEvent(int x, int y, int info, int rotations) {
+    if (!IsCurrentInputDesktop()) {
+        handleOpenInputDesktop();
+    }
     INPUT input;
     ZeroMemory(&input, sizeof(INPUT));
     input.type = INPUT_MOUSE;
