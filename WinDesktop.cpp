@@ -606,73 +606,72 @@ std::vector<BYTE> CaptureDesktopToBytes() {
  */
 int MapJavaKeyCodeToWinVK(int javaKeyCode) {
     switch (javaKeyCode) {
-    // ===== 功能键 F1-F12 =====
-    case 0x70: return VK_F1;
-    case 0x71: return VK_F2;
-    case 0x72: return VK_F3;
-    case 0x73: return VK_F4;
-    case 0x74: return VK_F5;
-    case 0x75: return VK_F6;
-    case 0x76: return VK_F7;
-    case 0x77: return VK_F8;
-    case 0x78: return VK_F9;
-    case 0x79: return VK_F10;
-    case 0x7A: return VK_F11;
-    case 0x7B: return VK_F12;
-
-     // ===== 方向键 =====
-    case 0x25: return VK_LEFT;
-    case 0x26: return VK_UP;
-    case 0x27: return VK_RIGHT;
-    case 0x28: return VK_DOWN;
-
         // ===== 控制键 =====
-    case 0x10: return VK_SHIFT;   // KeyEvent.VK_SHIFT
-    case 0x11: return VK_CONTROL; // KeyEvent.VK_CONTROL
-    case 0x12: return VK_MENU;    // KeyEvent.VK_ALT
-    case 0x14: return VK_CAPITAL; // CapsLock
-    case 0x09: return VK_TAB;
-    case 0x0D: return VK_RETURN;
-    case 0x1B: return VK_ESCAPE;
-    case 0x20: return VK_SPACE;
-    case 0x2E: return VK_DELETE;
-    case 0x24: return VK_HOME;
-    case 0x23: return VK_END;
-    case 0x21: return VK_PRIOR;   // PageUp
-    case 0x22: return VK_NEXT;    // PageDown
-    case 0x2D: return VK_INSERT;
-    case 0x08: return VK_BACK;
+        case 16:  return VK_SHIFT;     // KeyEvent.VK_SHIFT
+        case 17:  return VK_CONTROL;   // KeyEvent.VK_CONTROL
+        case 18:  return VK_MENU;      // KeyEvent.VK_ALT
+        case 20:  return VK_CAPITAL;   // KeyEvent.VK_CAPS_LOCK
+        case 9:   return VK_TAB;       // KeyEvent.VK_TAB
+        case 10:  return VK_RETURN;    // KeyEvent.VK_ENTER
+        case 27:  return VK_ESCAPE;    // KeyEvent.VK_ESCAPE
+        case 32:  return VK_SPACE;     // KeyEvent.VK_SPACE
+        case 127: return VK_DELETE;    // KeyEvent.VK_DELETE
+        case 36:  return VK_HOME;      // KeyEvent.VK_HOME
+        case 35:  return VK_END;       // KeyEvent.VK_END
+        case 33:  return VK_PRIOR;     // KeyEvent.VK_PAGE_UP
+        case 34:  return VK_NEXT;      // KeyEvent.VK_PAGE_DOWN
+        case 155: return VK_INSERT;    // KeyEvent.VK_INSERT
+        case 8:   return VK_BACK;      // KeyEvent.VK_BACK_SPACE
 
-        // ===== 小键盘 (NumPad) =====
-    case 0x60: return VK_NUMPAD0;
-    case 0x61: return VK_NUMPAD1;
-    case 0x62: return VK_NUMPAD2;
-    case 0x63: return VK_NUMPAD3;
-    case 0x64: return VK_NUMPAD4;
-    case 0x65: return VK_NUMPAD5;
-    case 0x66: return VK_NUMPAD6;
-    case 0x67: return VK_NUMPAD7;
-    case 0x68: return VK_NUMPAD8;
-    case 0x69: return VK_NUMPAD9;
-    case 0x6A: return VK_MULTIPLY;
-    case 0x6B: return VK_ADD;
-    case 0x6D: return VK_SUBTRACT;
-    case 0x6E: return VK_DECIMAL;
-    case 0x6F: return VK_DIVIDE;
+        // ===== 功能键 F1-F12 ===== (Java 与 Win 值一致)
+        case 112: return VK_F1;
+        case 113: return VK_F2;
+        case 114: return VK_F3;
+        case 115: return VK_F4;
+        case 116: return VK_F5;
+        case 117: return VK_F6;
+        case 118: return VK_F7;
+        case 119: return VK_F8;
+        case 120: return VK_F9;
+        case 121: return VK_F10;
+        case 122: return VK_F11;
+        case 123: return VK_F12;
 
-        // ===== 符号键（常用）=====
-    case 0xBA: return VK_OEM_1;   // ;:
-    case 0xBB: return VK_OEM_PLUS;  // +
-    case 0xBC: return VK_OEM_COMMA; // ,
-    case 0xBD: return VK_OEM_MINUS; // -
-    case 0xBE: return VK_OEM_PERIOD;// .
-    case 0xBF: return VK_OEM_2;   // /?
-    case 0xC0: return VK_OEM_3;   // `~
-    case 0xDB: return VK_OEM_4;   // [{
-    case 0xDC: return VK_OEM_5;   // \|
-    case 0xDD: return VK_OEM_6;   // ]}
-    case 0xDE: return VK_OEM_7;   // '"
+        // ===== 方向键 (Java 与 Win 值一致) =====
+        case 37: return VK_LEFT;
+        case 38: return VK_UP;
+        case 39: return VK_RIGHT;
+        case 40: return VK_DOWN;
 
+         // ===== 小键盘 (NumPad) =====
+        case 96: return VK_NUMPAD0;
+        case 97: return VK_NUMPAD1;
+        case 98: return VK_NUMPAD2;
+        case 99: return VK_NUMPAD3;
+        case 100: return VK_NUMPAD4;
+        case 101: return VK_NUMPAD5;
+        case 102: return VK_NUMPAD6;
+        case 103: return VK_NUMPAD7;
+        case 104: return VK_NUMPAD8;
+        case 105: return VK_NUMPAD9;
+        case 106: return VK_MULTIPLY;
+        case 107: return VK_ADD;
+        case 109: return VK_SUBTRACT;
+        case 110: return VK_DECIMAL;
+        case 111: return VK_DIVIDE;
+
+
+        case 59:  return VK_OEM_1;     // ;:
+        case 61:  return VK_OEM_PLUS;  // =
+        case 44:  return VK_OEM_COMMA; // ,
+        case 45:  return VK_OEM_MINUS; // -
+        case 46:  return VK_OEM_PERIOD;// .
+        case 47:  return VK_OEM_2;     // /?
+        case 192: return VK_OEM_3;     // `~
+        case 91:  return VK_OEM_4;     // [{
+        case 92:  return VK_OEM_5;     // \|
+        case 93:  return VK_OEM_6;     // ]}
+        case 222: return VK_OEM_7;     // '"
     default:
         return javaKeyCode; // 没有特殊映射时直接返回（部分键值在 Win/Linux 相同）
     }
@@ -688,11 +687,21 @@ void SimulateKeyEvent(int keyCode, int pressed) {
     INPUT input;
     ZeroMemory(&input, sizeof(INPUT));
     input.type = INPUT_KEYBOARD;
-    input.ki.wVk = MapJavaKeyCodeToWinVK(keyCode);  // 虚拟键码
 
+    // 映射 Win VK
+    input.ki.wVk = MapJavaKeyCodeToWinVK(keyCode);
+
+    // 使用扫描码保证在锁屏/桌面切换情况下也能生效
+    input.ki.wScan = MapVirtualKey(input.ki.wVk, MAPVK_VK_TO_VSC);
+
+    // KEYEVENTF_SCANCODE 必须加上，否则某些键在特殊桌面无效
+    input.ki.dwFlags = KEYEVENTF_SCANCODE;
     if (!pressed) {
-        input.ki.dwFlags = KEYEVENTF_KEYUP;  // 抬起
+        input.ki.dwFlags |= KEYEVENTF_KEYUP;
     }
+
+    input.ki.time = 0;
+    input.ki.dwExtraInfo = 0;
 
     SendInput(1, &input, sizeof(INPUT));
 }
